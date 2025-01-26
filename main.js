@@ -18,7 +18,7 @@ let totalharga;
 let udahbayar;
 
 function start() {
-  const inpnm = document.getElementById("inpnma").value;
+  const inpnm = document.getElementById("inpnma").value.toLowerCase();
   const dbpath = ref(db, `pesanan/${inpnm}`)
 
   get(dbpath)
@@ -50,7 +50,7 @@ function bayar() {
     if(parseInt(document.getElementById("inpbyr").value) == inttotha) {
       console.log(inttotha + "\n" + udahbayar)
       //update ke database
-      const inpnm = document.getElementById("inpnma").value;
+      const inpnm = document.getElementById("inpnma").value.toLowerCase();
       const dbpath = ref(db, `pesanan/${inpnm}`)
 
       update(dbpath, {udahbayar: "qris"})
