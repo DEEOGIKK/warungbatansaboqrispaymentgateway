@@ -30,7 +30,7 @@ function start() {
 
         console.log(totalharga + "\n" + udahbayar)
 
-        document.getElementById("tohaprev").textContent = "Total Harga : " + totalharga
+        document.getElementById("tohaprev").innerHTML = "Nama : " + data.nama +  "<br>" + "Total Harga : " + totalharga + "<br>Keterangan : " + data.udahbayar
       }
     })
     .catch((error) => {
