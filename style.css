@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Texturina:ital,opsz,wght@0,12..72,100..900;1,12..72,100..900&family=Vina+Sans&display=swap');
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #61411c;
+        font-family: "Vina Sans", serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #EDD499;
+    }
+    .aowuhd {
+        text-align: center;
+        margin-top: -15px;
+        font-size: 25px;
+        text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.60);
+    }
+    .line {
+        width: 90%;
+        height: 5px;
+        border-radius: 20px;
+        background-color: #482f11;
+        margin: auto;
+    }
+    .formsection {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+    }
+    .formsection input {
+        font-size: 20px;
+        height: 40px;
+        border-radius: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: none;
+    }
+    .formsection div {
+        height: 40px;
+        font-size: 25px;
+        border-radius: 20px;
+        border: none;
+        background-color: #875A27;
+        text-align: center;
+    }
+    .formsection p {
+        text-align: left;
+        font-size: 25px;
+        margin: auto;
+    }
