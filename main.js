@@ -16,6 +16,7 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase(app)
 let totalharga;
 let udahbayar;
+let gdna;
 
 function start() {
   const inpnm = document.getElementById("inpnma").value.toLowerCase();
@@ -30,7 +31,14 @@ function start() {
 
         console.log(totalharga + "\n" + udahbayar)
 
-        document.getElementById("tohaprev").innerHTML = "Nama : " + data.nama +  "<br>" + "Total Harga : " + totalharga + "<br>Keterangan : " + data.udahbayar
+        gdna = data.nama;
+
+        var dna = "Nama : " + data.nama + "<br>"
+        var toha = "Total Harga : " + data.totha + "<br>"
+        var pesa = "Pesanan : " + data.produk + "<br>"
+        var kete = "Keterangan : " + data.udahbayar + "<br>"
+
+        document.getElementById("tohaprev").innerHTML = dna + toha + pesa + kete
       }
     })
     .catch((error) => {
@@ -45,7 +53,7 @@ function bayar() {
 
   //cek apakah udah bayar apa blom
   if(udahbayar != "belum") {
-    alert("anda sudah membayar!")
+    document.getElementById("tohaprev").textContent = "ATAS NAMA " + gdna + " SUDAH MEMBAYAR!"
   }else {
     if(parseInt(document.getElementById("inpbyr").value) == inttotha) {
       console.log(inttotha + "\n" + udahbayar)
@@ -55,11 +63,13 @@ function bayar() {
 
       update(dbpath, {udahbayar: "qris"})
 
-      alert("anda berhasil membayar!")
+      document.getElementById("tohaprev").textContent = "PEMBAYARAN QRIS SUKSES!"
     }else {
-      alert("jumlah bayar anda kurang atau lebih!")
+      document.getElementById("tohaprev").textContent = "jumlah bayar anda kurang atau lebih!"
     }
   }
+  document.getElementById("inpbyr").value = ""
+  document.getElementById("inpnma").value = ""
 }
 document.getElementById("cekbtn").addEventListener("click", start);
 document.getElementById("bayarbtn").addEventListener("click", bayar);
